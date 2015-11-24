@@ -9,9 +9,9 @@ datos experimentales obtenidos en 1929.
 '''
 
 # DATOS
-datos = np.loadtxt("data/hubble_original.dat")
-r = datos[:, 0]
-v = datos[:, 1]
+datos = np.loadtxt("data/SNIa.dat", usecols=(1, 2))
+r = datos[:, 1]
+v = datos[:, 0]
 n = len(r)  # número de galaxias
 
 # ORGANIZACION DE DATOS
@@ -28,6 +28,10 @@ print(H1)
 # SEGUNDO CÁLCULO DE H
 H2 = S_vv / S_rv
 print(H2)
+
+# CÁLCULO FINAL DE H
+H = (H1 + H2) / 2
+print(H)
 
 # INTERVALOS DE CONFIANZA
 np.random.seed(1943)

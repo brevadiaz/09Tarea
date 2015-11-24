@@ -29,6 +29,10 @@ print(H1)
 H2 = S_vv / S_rv
 print(H2)
 
+# CÁLCULO FINAL DE H
+H = (H1 + H2) / 2
+print(H)
+
 # INTERVALOS DE CONFIANZA
 np.random.seed(1943)
 Nboot = 1000
