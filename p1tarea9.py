@@ -5,7 +5,9 @@ from scipy import stats
 
 '''
 Este script calcula la constante de Hubble a partir de
-datos experimentales obtenidos en 1929.
+datos experimentales obtenidos en 1929 y su intervalo de
+confianza al 95% mediante un ajuste lineal que minimiza
+chi cuadrado.
 '''
 
 # DATOS
