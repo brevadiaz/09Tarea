@@ -61,3 +61,31 @@ orden = np.sort(mean_final)
 low = orden[int(Nboot * 0.025)]
 high = orden[int(Nboot * 0.975)]
 print "El intervalo de confianza al 95% es: [{}:{}]".format(low, high)
+
+# GRÁFICO D v/s v
+fig = plt.figure(1)
+fig.clf()
+dist = np.linspace(0, 500, 10000)
+vel = H * dist
+plt.plot(r, v, '*', label="Datos experimentales")
+plt.plot(dist, vel, color='r', label="Ajuste Lineal")
+plt.xlabel('Distancia [Mpc]')
+plt.ylabel('Velocidad [km/s]')
+plt.legend(loc=0, fontsize=9)
+plt.draw()
+plt.show()
+plt.savefig('p2.png')
+
+# HISTOGRAMA INTERVALOS DE CONFIANZA
+fig2 = plt.figure(2)
+fig2.clf()
+plt.hist(mean_final, bins=100, facecolor='c')
+plt.axvline(H, color='r', linewidth=3, label="Valor obtenido")
+plt.axvline(low, color='g', linewidth=3, label="Limites intervalo de confianza")
+plt.axvline(high, color='g', linewidth=3)
+plt.xlabel("H [Km/s/Mpc]")
+plt.ylabel("Frecuencia")
+plt.legend(loc=2, fontsize=9)
+plt.draw()
+plt.show()
+plt.savefig('histp2.png')
